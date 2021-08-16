@@ -43,25 +43,36 @@ function passwordCharacters() {
   const numbers = '0123456789';
   const characters = `!"#$%&'()*+,-./:;<>=?@[]^_\\{}|~`;
 
-  var characterRange = '';
+  var passwordCharacters = '';
 
-  if (hasLowercase) { 
-     characterRange += lowerCase; 
+  if (forLowercase) { 
+     passwordCharacters += lowercase; 
   }
-  if (hasUppercase) { 
-     characterRange += upperCase; 
+  if (forUppercase) { 
+     passwordCharacters += uppercase; 
   }
-  if (hasNumerics) { 
-     characterRange += numeric; 
+  if (forNumbers) { 
+     passwordCharacters += numbers; 
   }
-  if (hasSpecials) { 
-     characterRange += specialChars; 
+  if (forCharacters) { 
+     passwordCharacters += characters; 
   }
 
-  // Return 
-  return characterRange;
+  // return characters
+  return passwordCharacters;
 };
 
+// create password
+function generatePassword() {
+  var userLength = createPasswordLength();
+  var userCharacters = passwordCharacters();
+
+  var userPassword = "";
+  for (let i = 0; i < userLength; i++) {
+    userPassword += userCharacters.charAt(Math.floor(Math.random() * userCharacters.length));
+  }
+  return userPassword;
+};
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
