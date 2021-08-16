@@ -1,5 +1,5 @@
 // initiate password generator
-alert("Please follow the prompts to generate a random password.")
+alert("Please follow the prompts to generate a random password. Click Generate Password to begin.")
 
 // password criteria prompts
 // password length
@@ -18,13 +18,13 @@ function createPasswordLength() {
 function passwordCharacters() {
   alert("What types of characters does your password require?");
   // for lowercase
-  var forLowercase = confirm("Lowercase");
+  var forLowercase = confirm("Do you need lowercase?");
   // for uppercase
-  var forUppercase = confirm("Uppercase");
+  var forUppercase = confirm("Do you need uppercase?");
   // for numbers
-  var forNumbers = confirm("Numbers");
+  var forNumbers = confirm("Do you need numbers?");
   // for special characters
-  var forCharacters = confirm("Special Characters");
+  var forCharacters = confirm("Do you need special characters?");
 
   // array
   var confirmArray = new Array(forLowercase, forUppercase, forNumbers, forCharacters);
